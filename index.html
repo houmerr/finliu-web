@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinLiu - Intelligent Financial & Investment Optimization</title>
+    <title>FinLiu - Solid Financial Intelligence. Simplified.</title>
     <style>
         :root {
             --bg-dark: #0B0F19;
             --bg-card: #111827;
+            --bg-card-overlay: #1F2937;
             --accent-green: #10B981;
             --accent-glow: rgba(16, 185, 129, 0.15);
             --text-main: #F9FAFB;
@@ -31,12 +32,12 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Navigation */
+        /* Header Navigation */
         header {
             padding: 24px 0;
             border-bottom: 1px solid var(--border-color);
@@ -74,26 +75,14 @@
             color: var(--accent-green);
         }
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-green);
-        }
-
         /* Hero Section */
         .hero {
-            padding: 90px 0 60px 0;
+            padding: 80px 0 40px 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -0.03em;
@@ -110,12 +99,11 @@
             margin: 0 auto 40px auto;
         }
 
-        /* Google Play Button */
         .cta-group {
             display: flex;
             justify-content: center;
             gap: 16px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .btn-playstore {
@@ -128,22 +116,12 @@
             gap: 14px;
             text-decoration: none;
             color: white;
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         .btn-playstore:hover {
             transform: translateY(-2px);
             border-color: var(--accent-green);
-            box-shadow: 0 10px 25px var(--accent-glow);
-        }
-
-        .btn-playstore .play-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        .btn-text {
-            text-align: left;
         }
 
         .btn-text .top-txt {
@@ -151,8 +129,6 @@
             color: #9CA3AF;
             text-transform: uppercase;
             display: block;
-            margin-bottom: -2px;
-            letter-spacing: 0.05em;
         }
 
         .btn-text .main-txt {
@@ -161,115 +137,219 @@
             display: block;
         }
 
-        /* Features Section */
-        .features-section {
+        /* Advanced App Presentation Section */
+        .showcase-section {
             padding: 60px 0;
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
         }
 
-        .section-title {
+        .section-subtitle {
             text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: var(--accent-green);
             margin-bottom: 40px;
-            letter-spacing: -0.02em;
+            font-weight: 700;
         }
 
-        .features-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-            flex: 1;
-            min-width: 300px;
-            max-width: 340px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .card:hover {
-            border-color: rgba(16, 185, 129, 0.4);
-            transform: translateY(-4px);
-        }
-
-        .card .icon {
-            font-size: 1.75rem;
-            background: rgba(16, 185, 129, 0.1);
-            width: 50px;
-            height: 50px;
+        .interactive-dashboard {
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            color: var(--accent-green);
+            gap: 40px;
+            position: relative;
+            margin-bottom: 100px;
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* App Screenshots Section */
-        .screenshots-section {
-            padding: 60px 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .screenshot-slider {
+        /* Contextual Feature Callouts */
+        .showcase-column {
+            flex: 1;
             display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding: 20px 10px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 360px;
+            z-index: 2;
         }
 
-        .screenshot-slider::-webkit-scrollbar {
-            height: 6px;
+        .showcase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s;
         }
 
-        .screenshot-slider::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 10px;
+        .showcase-card:hover {
+            border-color: var(--accent-green);
         }
 
-        .screenshot-wrapper {
+        .showcase-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .showcase-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Center Phone Wrapper */
+        .phone-wrapper {
             flex: 0 0 auto;
-            width: 240px;
-            scroll-snap-align: center;
-            border-radius: 20px;
+            width: 310px;
+            border: 10px solid #1E293B;
+            border-radius: 40px;
             overflow: hidden;
-            border: 4px solid var(--bg-card);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            background: #1e293b;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+            background: #000;
+            position: relative;
+            z-index: 1;
         }
 
-        .screenshot-wrapper img {
+        .phone-wrapper img {
             width: 100%;
             height: auto;
             display: block;
         }
 
+        /* 5-Step Progressional Workflow Layout */
+        .workflow-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            letter-spacing: -0.02em;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        /* Horizontal central connectors */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 110px;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 1;
+        }
+
+        .timeline-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 10px;
+        }
+
+        .step-preview {
+            width: 140px;
+            height: 220px;
+            margin: 0 auto 24px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            background: #1e293b;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .timeline-step:hover .step-preview {
+            transform: translateY(-5px);
+            border-color: var(--accent-green);
+        }
+
+        .step-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .step-node {
+            width: 16px;
+            height: 16px;
+            background: var(--bg-dark);
+            border: 3px solid var(--border-color);
+            border-radius: 50%;
+            margin: 0 auto 16px auto;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .timeline-step:hover .step-node {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            box-shadow: 0 0 10px var(--accent-green);
+        }
+
+        .timeline-step h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Extra Functional Grid Bottom */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .bottom-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(17,24,39,0.5) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bottom-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .bottom-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .security-graphic {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px dashed rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
         /* Footer */
         footer {
-            margin-top: 100px;
             padding: 40px 0;
             border-top: 1px solid var(--border-color);
             text-align: center;
             font-size: 0.9rem;
             color: var(--text-muted);
+            margin-top: 60px;
         }
 
         footer .links {
@@ -280,46 +360,43 @@
             color: var(--text-muted);
             text-decoration: none;
             margin: 0 12px;
-            transition: color 0.2s;
         }
 
         footer a:hover {
             color: var(--accent-green);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            .features-container { flex-direction: column; align-items: center; }
-            .card { max-width: 100%; width: 100%; }
+        /* Full Responsive Design overrides */
+        @media (max-width: 992px) {
+            .interactive-dashboard { flex-direction: column; gap: 30px; }
+            .showcase-column { max-width: 100%; width: 100%; }
+            .timeline { flex-direction: column; gap: 40px; }
+            .timeline::before { display: none; }
+            .step-preview { height: 280px; width: 180px; }
+            .bottom-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Header Navigation -->
     <header>
         <div class="container nav-container">
             <a href="#" class="brand">
                 <img src="finlion_v2.png" alt="FinLiu Logo">
                 Fin<span>Liu</span>
             </a>
-            <nav class="nav-links">
-                <a href="#features">Features</a>
-            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Hero -->
     <section class="hero container">
-        <h1>Turn Financial Data<br>Into Your Edge</h1>
-        <p>Smart portfolio tracking, real-time market insights, and deep expense categorization built to help you achieve long-term financial persistence.</p>
+        <h1>Solid Financial Intelligence.<br>Simplified.</h1>
+        <p>Achieve financial persistence and solid clarity with FinLiu's analytical dashboard tracking structures.</p>
         
         <div class="cta-group">
-            <!-- Replace '#' with your real Google Play link once ready -->
             <a href="#" class="btn-playstore">
-                <svg class="play-icon" viewBox="0 0 512 512" width="24" height="24" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58 33.2-60.1-60.1 60.1-60.1 58 33.2c19.1 11.1 19.1 29.2 0 40.2zM385.4 337.8L104.6 499l220.7-126.5 60.1-60.1-60.1-34.6z"/></svg>
+                <svg viewBox="0 0 512 512" width="24" height="24" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58 33.2-60.1-60.1 60.1-60.1 58 33.2c19.1 11.1 19.1 29.2 0 40.2zM385.4 337.8L104.6 499l220.7-126.5 60.1-60.1-60.1-34.6z"/></svg>
                 <div class="btn-text">
                     <span class="top-txt">Get it on</span>
                     <span class="main-txt">Google Play</span>
@@ -328,59 +405,117 @@
         </div>
     </section>
 
-    <!-- App Screenshots Section -->
-    <section class="container screenshots-section">
-        <h2 class="section-title">App Interface</h2>
-        <div class="screenshot-slider">
-            <div class="screenshot-wrapper">
-                <img src="Screenshot_20260529_171355_FinLiu.jpg" alt="FinLiu App Settings">
+    <!-- Interactive Dashboard Simulation Section -->
+    <section class="showcase-section container">
+        <h3 class="section-subtitle">Integrated Dashboard Simulation</h3>
+        
+        <div class="interactive-dashboard">
+            <!-- Left Information Column -->
+            <div class="showcase-column">
+                <div class="showcase-card">
+                    <h4>📊 Live Data Stream</h4>
+                    <p>Real-time technical parameter mapping for underlying stock matrices and core tracking assets metrics automatically.</p>
+                </div>
+                <div class="showcase-card">
+                    <h4>🍕 Expense Categorization</h4>
+                    <p>Structured classification separating system transaction blocks into Mandatory, Discretionary, and Growth channels seamlessly.</p>
+                </div>
             </div>
-            <div class="screenshot-wrapper">
-                <img src="Screenshot_20260529_171402_FinLiu.jpg" alt="FinLiu Portfolio Allocation">
+
+            <!-- Central Mobile Device Representation -->
+            <div class="phone-wrapper">
+                <img src="Screenshot_20260529_171652_FinLiu.jpg" alt="FinLiu Core Mobile Interface Dashboard">
             </div>
-            <div class="screenshot-wrapper">
-                <img src="Screenshot_20260529_171432_FinLiu.jpg" alt="FinLiu Monthly View Chart">
-            </div>
-            <div class="screenshot-wrapper">
-                <img src="Screenshot_20260529_171652_FinLiu.jpg" alt="FinLiu Transactions List">
+
+            <!-- Right Information Column -->
+            <div class="showcase-column">
+                <div class="showcase-card">
+                    <h4>✨ AI Portfolio Analyst Report</h4>
+                    <p>On-demand generative analytical metrics scanning allocation concentration profiles, asset overlap tracking, and structural risk drag warnings.</p>
+                </div>
+                <div class="showcase-card">
+                    <h4>📈 Portfolios & Trend Tracking</h4>
+                    <p>Advanced metrics visualization highlighting cross-month performance progressions and historical baseline tracking assets flow maps.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="container features-section">
-        <h2 class="section-title">Features Built for Solid Results</h2>
-        <div class="features-container">
-            
-            <div class="card">
-                <div class="icon">📊</div>
-                <h3>Portfolio Intelligence</h3>
-                <p>Track your ETFs, equities, and global assets in one place. Monitor asset distribution, overlapping risks, and diversification scores dynamically.</p>
+    <!-- 5-Step Processional Workflow Section -->
+    <section class="workflow-section container">
+        <h2 class="section-title">Functional System Architecture</h2>
+        
+        <div class="timeline">
+            <!-- Step 1 -->
+            <div class="timeline-step">
+                <div class="step-preview">
+                    <img src="Screenshot_20260529_171355_FinLiu.jpg" alt="Step 1 Settings View">
+                </div>
+                <div class="step-node"></div>
+                <h5>1. Connect & Sync</h5>
             </div>
 
-            <div class="card">
-                <div class="icon">💰</div>
-                <h3>Deep Expense Categorization</h3>
-                <p>Easily log and group transactions into Mandatory, Discretionary, and Growth metrics to optimize your cash flow leaks instantly.</p>
+            <!-- Step 2 -->
+            <div class="timeline-step">
+                <div class="step-preview">
+                    <img src="Screenshot_20260529_171432_FinLiu.jpg" alt="Step 2 Expense Categories">
+                </div>
+                <div class="step-node"></div>
+                <h5>2. Categorize Expenses</h5>
             </div>
 
-            <div class="card">
-                <div class="icon">🛡️</div>
-                <h3>Security & Privacy First</h3>
-                <p>Your financial independence requires absolute privacy. Your local data structure ensures you remain in complete control of your records.</p>
+            <!-- Step 3 -->
+            <div class="timeline-step">
+                <div class="step-preview">
+                    <img src="Screenshot_20260529_171402_FinLiu.jpg" alt="Step 3 AI Analysis">
+                </div>
+                <div class="step-node"></div>
+                <h5>3. Analyze with AI</h5>
             </div>
 
+            <!-- Step 4 -->
+            <div class="timeline-step">
+                <div class="step-preview">
+                    <img src="Screenshot_20260529_171652_FinLiu.jpg" alt="Step 4 Track Flow">
+                </div>
+                <div class="step-node"></div>
+                <h5>4. Track Your Persistence</h5>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="timeline-step">
+                <div class="step-preview">
+                    <img src="Screenshot_20260529_171402_FinLiu.jpg" alt="Step 5 Recommendations">
+                </div>
+                <div class="step-node"></div>
+                <h5>5. Receive Optimization</h5>
+            </div>
+        </div>
+
+        <!-- Secondary Informational Grid Blocks -->
+        <div class="bottom-grid">
+            <div class="bottom-card">
+                <div>
+                    <h3>Portfolios & Capital Metrics</h3>
+                    <p>Sophisticated multi-currency asset tracking covering core international allocation indexes, tracking funds, and local balance cash storage safety pools completely.</p>
+                </div>
+            </div>
+            <div class="bottom-card">
+                <div>
+                    <h3>Local Secure Storage Architecture</h3>
+                    <p>Absolute tracking privacy parameters. Structural design mechanisms ensure transactional data records remain localized safely within user control parameters.</p>
+                </div>
+                <div class="security-graphic">🛡️ 🔒</div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Area -->
     <footer>
         <div class="container">
             <div class="links">
-                <a href="#features">Features</a>
                 <a href="#">Privacy Policy</a>
-                <!-- Input your Hostinger professional email here -->
-                <a href="mailto:info@finliu.com">Contact Support</a>
+                <a href="mailto:support@finliu.com">Contact Support</a>
             </div>
             <p>&copy; 2026 FinLiu. All rights reserved.</p>
         </div>
