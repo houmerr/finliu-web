@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finansų Optimizavimo Programėlė</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #10b981; /* Finansų žalia */
+            --card-bg: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Hero Sekcija */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Google Play Mygtukas */
+        .btn-google-play {
+            display: inline-flex;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #334155;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-google-play:hover {
+            transform: scale(1.05);
+            background-color: #111;
+        }
+
+        /* Savybės (Features) */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .feature-card h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* Footer / Teisinė informacija */
+        footer {
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                🦁 FinLio</div>
+            <nav>
+                <a href="#features" style="color: #94a3b8; text-decoration: none;">Savybės</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Optimizuok savo finansus išmaniai</h1>
+            <p>Sek savo išlaidas, valdyk investicijų portfelį ir pasiek finansinę laisvę su viena paprasta programėle.</p>
+            
+            <a href="#LINK" class="btn-google-play">
+                <span style="text-align: left; font-size: 0.8rem; font-weight: normal; block-size: auto; display: block; color: #a1a1aa;">GET IT ON</span>
+                <span style="font-size: 1.2rem; display: block; margin-top: -2px;">Google Play</span>
+            </a>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-card">
+                <h3>📊 Portfelio Sekimas</h3>
+                <p>Stebėkite savo pasaulinius ETF, akcijas ar kitus fondus vienoje vietoje realiu laiku.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💡 Išlaidų Optimizavimas</h3>
+                <p>Išmanūs algoritmai padeda atrasti, kur išleidžiate per daug, ir pasiūlo, kaip sutaupyti.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Saugumas Pirmiausia</h3>
+                <p>Jūsų finansiniai duomenys yra šifruojami ir saugomi laikantis aukščiausių saugumo standartų.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 FinLiu. Visos teisės saugomos.</p>
+            <p>
+                <a href="#privacy">Privatumo politika (Privacy Policy)</a> | 
+                <a href="mailto:info@finliu.com">Kontaktai</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
