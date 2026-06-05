@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting to FinLiu...</title>
+    <style>
+        body {
+            background-color: #0B0F19; /* Tavo programėlės tamsi spalva */
+            color: #F9FAFB;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .loader {
+            border: 4px solid #1F2937;
+            border-top: 4px solid #10B981; /* Emerald žalia */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        p { color: #9CA3AF; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="loader"></div>
+    <p>Securing connection, returning to FinLiu...</p>
+
+    <script>
+        // 1. Pasiimame visus parametrus (?code=...&status=...), kuriuos atsiuntė Enable Banking
+        const urlParams = window.location.search;
+
+        // 2. Automatiškai nukreipiame į programėlės giluminę nuorodą (Deep Link)
+        // Telefonas supras, kad reikia atidaryti FinLiu programėlę ir perduoti jai šiuos parametrus
+        window.location.href = "finliu://bank-callback" + urlParams;
+
+        // Atsarginis variantas: jei vartotojas užstringa, po 3 sekundžių parodome nuorodą rankiniam paspaudimui
+        setTimeout(() => {
+            document.body.innerHTML = `
+                <p>If you were not redirected automatically, <a href="finliu://bank-callback${urlParams}" style="color: #10B981; text-decoration: none; font-weight: bold;">click here to return to FinLiu</a>.</p>
+            `;
+        }, 3000);
+    </script>
+
+</body>
+</html>
