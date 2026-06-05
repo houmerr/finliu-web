@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLiu - Terms of Service & Privacy Policy</title>
+    <style>
+        :root {
+            --bg-color: #0B0F19; /* Tamsi paletė pagal programėlės stilių */
+            --card-bg: #111827;
+            --accent-color: #10B981; /* Emerald akcentas */
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --border-color: #1F2937;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 8px;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .policy-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .policy-section h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* Pabrėžiame pagrindinių dalių numeraciją su žaliu akcentu */
+        .policy-section h2.main-title {
+            border-bottom-color: var(--accent-color);
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .policy-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 16px;
+        }
+
+        .policy-section li {
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* Individualūs sąrašo ženkliukai su smaragdo spalva */
+        .policy-section li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 6px;
+            top: -2px;
+        }
+
+        .policy-section a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Fin<span>Liu</span> Legal Center</h1>
+            <div class="last-updated">Terms of Service & Privacy Policy</div>
+        </header>
+
+        <!-- 1. Terms of Service -->
+        <section class="policy-section">
+            <h2 class="main-title">1. Terms of Service</h2>
+            <p>By accessing or using FinLiu, you agree to be bound by these Terms of Service. If you do not agree, please do not use the app.</p>
+            <p>All rights, title, and interest in and to the application, including all intellectual property rights, are and will remain the exclusive property of the owner.</p>
+            <p>FinLiu provides tools for personal finance management, including:</p>
+            <ul>
+                <li>Expense and income tracking.</li>
+                <li>Budgeting and goal setting.</li>
+                <li>Investment portfolio journaling.</li>
+                <li>AI-powered spending and investment insights.</li>
+                <li>Bank account synchronization.</li>
+            </ul>
+            <p>You are responsible for maintaining the confidentiality of your account credentials. We reserve the right to suspend or terminate accounts that violate these terms.</p>
+        </section>
+
+        <!-- Third-Party Services -->
+        <section class="policy-section">
+            <h2>Third-Party Services</h2>
+            <p>FinLiu integrates with Firebase (Auth/Storage), Tink (Banking), Google Sign-In, Gemini AI (Insights), and Yahoo Finance (Investment Prices). Your use of these services is subject to their respective terms.</p>
+        </section>
+
+        <!-- Not Financial Advice -->
+        <section class="policy-section">
+            <h2>Not Financial Advice</h2>
+            <p>The insights provided by FinLiu, including those generated by AI, are for informational purposes only. They do not constitute financial, investment, or legal advice.</p>
+        </section>
+
+        <!-- 2. Privacy Policy -->
+        <section class="policy-section">
+            <h2 class="main-title">2. Privacy Policy</h2>
+            <p>We collect Account Information (email, name), Financial Data (manually entered transactions), Banking Data (via Tink), and Usage Data.</p>
+            <p>We use this information to provide the service, generate personalized AI insights, and synchronize your data across devices.</p>
+            <p>To provide insights, transaction data is sent to Google's Gemini AI. We share data with Firebase, Tink, and Yahoo Finance solely to perform app functions.</p>
+        </section>
+
+        <!-- Your Rights -->
+        <section class="policy-section">
+            <h2>Your Rights</h2>
+            <p>You can export your transactions and investments to CSV at any time. You can also delete your records or your entire account within the app settings.</p>
+        </section>
+
+        <!-- 3. Contact Us -->
+        <section class="policy-section">
+            <h2 class="main-title">3. Contact Us</h2>
+            <p>If you have any questions regarding these terms or your privacy, you can reach us at:</p>
+            <p>Email: <a href="mailto:support@finliu.com">support@finliu.com</a></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 FinLiu. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
